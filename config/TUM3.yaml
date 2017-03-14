@@ -1,0 +1,83 @@
+%YAML:1.0
+
+ROS.queue_size: 4
+# Kaqi
+#ROS.topic_rgb: "/head_kinect/rgb/image_rect_color"
+#ROS.topic_depth: "/head_kinect/depth_registered/image"
+# TUM3
+ROS.topic_rgb: "/camera/rgb/image_color"
+ROS.topic_depth: "/camera/depth/image"
+
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+Camera.fx: 535.4
+Camera.fy: 539.2
+Camera.cx: 320.1
+Camera.cy: 247.6
+Camera.width: 640
+Camera.height: 480
+
+# Camera frames per second 
+Camera.fps: 30.0
+
+# Scale for depth value
+Camera.scale: 1.0
+
+# Pointcloud resolution (1: VGA, 2: QVGA, 4: QQVGA, 8: QQQVGA)
+Camera.skip_pixels: 4
+
+# Plane segmentation parameters
+PlaneSegmentationSetting: '/home/lizhi/bags/rgbd/config/QQVGA.yaml'
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+# ORB Extractor: Number of features per image
+OrbExtractor.nFeatures: 1000
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+OrbExtractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+OrbExtractor.nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+OrbExtractor.iniThFAST: 20
+OrbExtractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Tracking Parameters
+#--------------------------------------------------------------------------------------------
+Tracking.max_frame_queue_size: 3
+
+#--------------------------------------------------------------------------------------------
+# Mapping Parameters
+#--------------------------------------------------------------------------------------------
+Mapping.max_frame_queue_size: 100
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.width: 1280
+Viewer.height: 720
+Viewer.viewpoint_x: 0
+Viewer.viewpoint_y: -0.7
+Viewer.viewpoint_z: -1.8
+Viewer.viewpoint_f: 500.0
+Viewer.panel_width: 320
+
+#--------------------------------------------------------------------------------------------
+# MapDrawer Parameters
+#--------------------------------------------------------------------------------------------
+MapDrawer.landmark_point_radius: 0.05
+MapDrawer.landmark_point_slices: 16
+MapDrawer.landmark_point_stacks: 8
+MapDrawer.cloud_point_size: 0.3
+
+
+
